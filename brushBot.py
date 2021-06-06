@@ -2,7 +2,7 @@
 import pygame , math 
 from pygame.locals import *
 position = (0,0)
-link_length = [13,10]
+link_length = [13,10]   #Modify values for finished arm.
 servo_angles = [0,0]
 
 # Function takes in X and Y co-ords from cursor position and finds the joint angles, assuming that the cursor end is where the end of the
