@@ -1,9 +1,9 @@
 #Program that converts real time cursor position to inverse kinematic angles for robot arm 
-import pygame , math 
+import pygame , math , serial
 from pygame.locals import *
 position = (0,0)
-link_length = [13,10]   #Modify values for finished arm.
-servo_angles = [0,0]
+link_length = [13,10]   #Modify values for finished product
+servo_angles = [0,0]    
 
 # Function takes in X and Y co-ords from cursor position and finds the joint angles, assuming that the cursor end is where the end of the
 # arm.
@@ -16,11 +16,16 @@ def inverse_kinematics(cursor_position):
     except:
         pass
     
-    joint_angles[0] = round(math.degrees(joint_angles[0]),1)
-    joint_angles[1] = round(math.degrees(joint_angles[1]),1)  
+    joint_angles[0] = round(math.degrees(joint_angles[0]))
+    joint_angles[1] = round(math.degrees(joint_angles[1]))  
 
     return joint_angles
-    
+
+# Function to write servo angles to arduino
+def write_arduino(some_argument):
+    pass
+
+
 # This block just defines all the values necessary to show the pygame window
 pygame.init()
 window_length = 650
